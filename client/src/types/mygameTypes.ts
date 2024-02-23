@@ -13,3 +13,10 @@ export type ThemeType = {
   theme: string;
   Questions: QuestionType[];
 };
+export type UserAnswer = {
+  usersAnswer: string;
+  questionId: number;
+}
+export type ValidatedData = {
+  validated: {} | boolean;
+}
