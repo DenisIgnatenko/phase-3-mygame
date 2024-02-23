@@ -14,8 +14,8 @@ type QuestAndAnswFormPropType = {
   question: QuestionType;
 };
 
-export default function QuestAndAnswForm({ question }: QuestAndAnswFormPropType) {
-  const { submitHandler } = useAnswHandler();
+export default function QuestAndAnswForm({ question }: QuestAndAnswFormPropType): JSX.Element {
+  // const { submitHandler } = useAnswHandler();
   return (
     <>
       <Card>
@@ -23,13 +23,12 @@ export default function QuestAndAnswForm({ question }: QuestAndAnswFormPropType)
           <Text>{question.question}</Text>
         </CardBody>
       </Card>
-      <form onSubmit={submitHandler}>
-        <FormControl>
-          <FormLabel>Ваш ответ:</FormLabel>
-          <Input type="text" name="answer" />
-          <FormHelperText>введите ответ не обращая внимания на рагеистр</FormHelperText>
-        </FormControl>
-      </form>
+
+      <FormControl>
+        <FormLabel>Ваш ответ:</FormLabel>
+        <Input type="text" name="answer" />
+        <FormHelperText>введите ответ не обращая внимания на рагеистр</FormHelperText>
+      </FormControl>
     </>
   );
 }

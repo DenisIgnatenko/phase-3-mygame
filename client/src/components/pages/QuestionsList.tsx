@@ -2,6 +2,8 @@ import React from 'react';
 import { Grid, GridItem, VStack, Box, Text } from '@chakra-ui/react';
 import type { ThemeType } from '../../types/mygameTypes';
 import ThemeWrapper from '../ui/ThemeWrapper';
+import QuestionModal from '../ui/QuestionModal';
+import QuestAndAnswForm from '../ui/QuestAndAnswForm';
 
 export default function QuestionsList(): JSX.Element {
   const themes: ThemeType[] = [
@@ -66,15 +68,10 @@ export default function QuestionsList(): JSX.Element {
             <Text fontWeight="bold">{theme.theme}</Text>
           </Box>
           {theme.questions.map((question) => (
-            <Box
-              bg="blue.500"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              height="150px"
-            >
-              <Box>{question.price}</Box>
-            </Box>
+            <QuestionModal buttonName={question.price}>
+              <QuestAndAnswForm question={question}>
+              </QuestAndAnswForm>
+            </QuestionModal>
           ))}
         </>
       ))}
