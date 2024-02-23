@@ -16,8 +16,6 @@ class ApiService {
   public validate(id: number): Promise<UserAnswer> {
     return this.apiInstance.post<UserAnswer>(`/validate/${id}`).then((res) => res.data);
   }
-
-  
 }
 
 export default new ApiService(api);
