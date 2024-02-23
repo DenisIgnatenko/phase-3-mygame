@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Box,
+  Button,
   Card,
   CardBody,
   FormControl,
@@ -17,18 +19,23 @@ type QuestAndAnswFormPropType = {
 export default function QuestAndAnswForm({ question }: QuestAndAnswFormPropType): JSX.Element {
   // const { submitHandler } = useAnswHandler();
   return (
-    <>
+    <Box p={3}>
+      <h2>{`Вы выбрали вопрос за ${question.price}`}</h2>
       <Card>
         <CardBody>
           <Text>{question.question}</Text>
         </CardBody>
       </Card>
-
-      <FormControl>
-        <FormLabel>Ваш ответ:</FormLabel>
-        <Input type="text" name="answer" />
-        <FormHelperText>введите ответ не обращая внимания на рагеистр</FormHelperText>
-      </FormControl>
-    </>
+      <form>
+        <FormControl>
+          <FormLabel>Ваш ответ:</FormLabel>
+          <Input type="text" name="answer" />
+          <FormHelperText>введите ответ не обращая внимания на рагеистр</FormHelperText>
+        </FormControl>
+        <Button variant="outline" mt={3} type="submit">
+          Ответить
+        </Button>
+      </form>
+    </Box>
   );
 }
