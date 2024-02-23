@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, VStack } from '@chakra-ui/react';
+import { Grid, GridItem, VStack, Box, Text } from '@chakra-ui/react';
 import type { ThemeType } from '../../types/mygameTypes';
 import ThemeWrapper from '../ui/ThemeWrapper';
 
@@ -50,14 +50,34 @@ export default function QuestionsList(): JSX.Element {
         { id: 18, price: 500 },
       ],
     },
-
-    // Добавь столько объектов ThemeType, сколько тебе нужно для тестирования
   ];
   return (
-    <VStack spacing={6} align="stretch">
+    <Grid templateColumns="repeat(6, 1fr)" gap={2}>
       {themes.map((theme) => (
-        <ThemeWrapper key={theme.id} themeData={theme} />
+        <>
+          <Box
+            colSpan={1}
+            bg="blue.100"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="150px"
+          >
+            <Text fontWeight="bold">{theme.theme}</Text>
+          </Box>
+          {theme.questions.map((question) => (
+            <Box
+              bg="blue.500"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              height="150px"
+            >
+              <Box>{question.price}</Box>
+            </Box>
+          ))}
+        </>
       ))}
-    </VStack>
+    </Grid>
   );
 }
