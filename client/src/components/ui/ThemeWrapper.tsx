@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Grid, GridItem, Flex, Heading, Text } from '@chakra-ui/react';
 import type { QuestionsType, ThemeType } from '../../types/mygameTypes';
+import QuestionModal from './QuestionModal';
+import QuestAndAnswForm from './QuestAndAnswForm';
 
 export default function ThemeWrapper({ themeData }: ThemeType): JSX.Element {
   const cardSize = '120px'; // Устанавливаем фиксированный размер для карточек
@@ -26,7 +28,9 @@ export default function ThemeWrapper({ themeData }: ThemeType): JSX.Element {
           justifyContent="center"
           height="150px"
         >
-          <Box>{question.price}</Box>
+          <QuestionModal buttonName={question.price}>
+            <QuestAndAnswForm question={question} />
+          </QuestionModal>
         </Box>
       ))}
     </Grid>
