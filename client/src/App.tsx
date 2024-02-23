@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import '@fontsource/raleway/400.css';
 import '@fontsource/open-sans/700.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import TodoPage from './components/pages/TodoPage';
-import SignInPage from './components/pages/SignInPage';
-import SignUpPage from './components/pages/SignUpPage';
-import TestPage from './components/pages/TestPage';
+import MainPage from './components/pages/MainPage';
+import QuestionsList from './components/pages/QuestionsList';
 import Root from './components/Root';
 
 function App(): JSX.Element {
@@ -15,14 +13,12 @@ function App(): JSX.Element {
       element: <Root />,
       errorElement: <h1>Oppps</h1>,
       children: [
-        {path:'/', element:<TodoPage/>},
-        {path:'/test', element:<TestPage/>},
-        {path:'/todos', element:<TodoPage/>},
-      ]
-
+        { path: '/', element: <MainPage /> },
+        { path: '/mygame', element: <QuestionsList /> },
+      ],
     },
   ]);
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
 export default App;
