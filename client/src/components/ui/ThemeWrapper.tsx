@@ -17,7 +17,7 @@ export default function ThemeWrapper({ themeData }: ThemeType): JSX.Element {
       >
         <Text fontWeight="bold">{themeData.theme}</Text>
       </Box>
-      {themeData.questions.map((question) => (
+      {themeData.Questions.map((question) => (
         <Box
           key={question.id}
           bg="blue.500"
