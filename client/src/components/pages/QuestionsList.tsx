@@ -54,26 +54,9 @@ export default function QuestionsList(): JSX.Element {
     },
   ];
   return (
-    <Grid templateColumns="repeat(6, 1fr)" gap={2}>
+    <Grid gap={1}>
       {themes.map((theme) => (
-        <>
-          <Box
-            colSpan={1}
-            bg="blue.100"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            height="150px"
-          >
-            <Text fontWeight="bold">{theme.theme}</Text>
-          </Box>
-          {theme.questions.map((question) => (
-            <QuestionModal buttonName={question.price}>
-              <QuestAndAnswForm question={question}>
-              </QuestAndAnswForm>
-            </QuestionModal>
-          ))}
-        </>
+        <ThemeWrapper key={theme.id} themeData={theme} />
       ))}
     </Grid>
   );
