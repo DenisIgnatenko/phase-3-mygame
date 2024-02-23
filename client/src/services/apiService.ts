@@ -1,6 +1,6 @@
 import type { AxiosInstance } from 'axios';
 import axios from 'axios';
-import type { TodoType } from '../types/todoTypes';
+import type { ThemeType, UserAnswer } from '../types/mygameTypes';
 
 const api = axios.create({
   baseURL: `${import.meta.env.VITE_APP_BASEURL}`,
@@ -9,17 +9,15 @@ const api = axios.create({
 class ApiService {
   constructor(private readonly apiInstance: AxiosInstance) {}
 
-  public getTodos(): Promise<TodoType[]> {
-    return this.apiInstance.get<TodoType[]>('/todo').then((res) => res.data);
+  public getThemes(): Promise<ThemeType[]> {
+    return this.apiInstance.get<ThemeType[]>('/themes').then((res) => res.data);
   }
 
-  public deleteTodo(id: number): Promise<void> {
-    return this.apiInstance.delete(`/todo/${id}`);
+  public validate(id: number): Promise<UserAnswer> {
+    return this.apiInstance.post<UserAnswer>(`/validate/${id}`).then((res) => res.data);
   }
 
-  public changeTodoStatus(id: number): Promise<TodoType> {
-    return this.apiInstance.put<TodoType>(`/todo/${id}`).then((res) => res.data);
-  }
+  
 }
 
 export default new ApiService(api);
