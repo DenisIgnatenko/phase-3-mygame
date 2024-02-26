@@ -12,7 +12,7 @@ export default function Footer(): JSX.Element {
       bg="#95CCFC"
       color="white"
       boxShadow="md"
-      borderRadius="md"
+      borderRadius=" md"
     >
       <Text>© {new Date().getFullYear()} Своя Игра. Все права защищены.</Text>
     </Flex>

@@ -10,19 +10,30 @@ export default function QuestionsList(): JSX.Element {
   const dispatch = useAppDispatch();
   React.useEffect(() => {
     void dispatch(fetchThemesThunk());
-  }, [dispatch]);
+  }, [dispatch])
 
   const themes: ThemeType[] = themesAndQuestions;
 
   console.log('Themes and actions', themesAndQuestions);
   return (
-    <Grid gap={1}>
+    <Grid gap={1} bg="yellow.400">
       {themes.map((theme) => (
         <ThemeWrapper key={theme.id} themeData={theme} />
       ))}
     </Grid>
   );
 }
+
+
+// return (
+//   <Grid templateColumns="repeat(auto-fill, minmax(240px, 1fr))" gap={1}>
+//     {themes.map((theme) => (
+//       <Box key={theme.id} bg="yellow.200" p={1}>
+//         <ThemeWrapper themeData={theme} />
+//       </Box>
+//     ))}
+//   </Grid>
+// );
 
 // const themes: ThemeType[] = [
 //   {
