@@ -2,6 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import '@fontsource/open-sans';
 import '@fontsource/roboto';
+import { createRoutesFromChildren } from 'react-router-dom';
 
 const styles = {
   global: (props) => ({
@@ -16,7 +17,7 @@ const components = {
   Drawer: {
     baseStyle: (props) => ({
       dialog: {
-        bg: mode('white', '#141214')(props),
+        bg: mode('white', '#C3E0E9')(props),
       },
     }),
   },

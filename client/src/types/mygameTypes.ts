@@ -8,15 +8,15 @@ export type QuestionType = {
 };
 
 export type ThemeType = {
-  //indall themes include comments
   id: number;
   theme: string;
   Questions: QuestionType[];
 };
+
 export type UserAnswer = {
   usersAnswer: string;
   questionId: number;
-}
+};
 export type ValidatedData = {
   validated: {} | boolean;
-}
+};

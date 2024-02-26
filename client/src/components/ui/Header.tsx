@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Flex, Text, Box, HStack } from '@chakra-ui/react';
+import { Flex, Text, Box, HStack, Image } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import ModeSwitcher from './ModeSwitcher';
 // import AppModal from './AppModal';
@@ -48,12 +48,12 @@ export default function Header(): JSX.Element {
       borderRadius="md"
     >
       <Text fontSize="xl" fontWeight="bold">
-        <h1>СВОЯ ИГРА</h1>
+        <Image src={'./logo.png'} width="250px" alt="logo" />
       </Text>
       <Box>
         <HStack>
           {Links.map((link) => (
-            <Link key={link.name} link={link} mr={5} />
+            <Link key={link.name} link={link} fontSize="lg" mr={6} />
           ))}
           {/* <Button variant="outline">Вход</Button>
         <Button m={3}>Регистрация</Button>

@@ -7,7 +7,7 @@ import Footer from './ui/Footer';
 export default function Root(): JSX.Element {
   return (
     <Container maxW="container.xl">
-      <Header />
+      <Header />`
       <Outlet />
       <Footer />
     </Container>

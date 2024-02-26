@@ -8,7 +8,7 @@ export default function ThemeWrapper({ themeData }: ThemeType): JSX.Element {
   const cardSize = '120px'; // Устанавливаем фиксированный размер для карточек
 
   return (
-    <Grid templateColumns="repeat(6, 1fr)" gap={1}>
+    <Grid templateColumns="repeat(6, 1fr)" gap={1} bg="yellow.400">
       <Box
         colSpan={0}
         bg="blue.100"
