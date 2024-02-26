@@ -1,6 +1,6 @@
 import type { AxiosInstance } from 'axios';
 import axios from 'axios';
-import type { ThemeType, UserAnswer } from '../types/mygameTypes';
+import type { ThemeType, UserAnswer, ValidatedData } from '../types/mygameTypes';
 
 const api = axios.create({
   baseURL: `${import.meta.env.VITE_APP_BASEURL}`,
@@ -13,8 +13,8 @@ class ApiService {
     return this.apiInstance.get<ThemeType[]>('/themes').then((res) => res.data);
   }
 
-  public validate(id: number): Promise<UserAnswer> {
-    return this.apiInstance.post<UserAnswer>(`/validate/${id}`).then((res) => res.data);
+  public validate(id: number): Promise<ValidatedData> {
+    return this.apiInstance.post<ValidatedData>(`/validate/${id}`).then((res) => res.data);
   }
 }
 
