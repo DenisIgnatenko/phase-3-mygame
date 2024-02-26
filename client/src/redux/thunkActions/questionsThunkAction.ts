@@ -9,9 +9,9 @@ export const fetchThemesThunk = createAsyncThunk<ThemeType[]>('themes/fetchAll',
   return themes;
 });
 
-export const validateAnswerThunk = createAsyncThunk<ValidatedData>(
+export const validateAnswerThunk = createAsyncThunk<ValidatedData, number>(
   'questions/validate',
-  async (id: number) => {
+  async (id) => {
     const isValindAnswer = await apiService.validate(id);
     return isValindAnswer;
   },
